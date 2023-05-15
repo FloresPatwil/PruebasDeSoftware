@@ -49,7 +49,7 @@ class Cajero:
                 if opcion == "1" :
                     self.depositar()
                 elif opcion == "2" :
-                    self.retiro()
+                    self.retirar()
                 elif opcion == "3":
                     self.ver()
                 elif opcion == "4":
@@ -98,9 +98,10 @@ class Cajero:
             return
         print("Su monto actual es", self.monto)
         self.monto-=retiro
-        print(f"Usted a retirado: ",retiro, "su nuevo monto es {self.monto}")
+        self.retiro_dia += retiro
+        print(f"Usted a retirado: {retiro}", f"su nuevo monto es {self.monto}")
 
     def ver(self):
-        print(f"Su saldo es: " , {self.monto})
+        print(f"Su saldo es: " , self.monto)
 
 app = Cajero()
