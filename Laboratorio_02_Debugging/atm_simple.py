@@ -31,7 +31,6 @@ class Cajero:
     def menu(self):
         self.contraseña()
         opcion = 0
-
         while opcion != "4":
             print(""" Bienvenido al cajero automatico
 
@@ -68,11 +67,12 @@ class Cajero:
                     print("No existe esa opción")
 
     def depositar(self):
-	    dep = int(input("Ingrese su monto a depositar:"))
-        print("Usted a depositado",dep)
-        # modificar al monto
-        self.monto+=dep
+        deposito = int(input("Ingrese su monto a depositar: "))
+        print("Usted ha depositado", deposito)
+        # modificar el monto
+        self.monto += deposito
         print(f"Su nuevo saldo es {self.monto}")
+
 
     def retiro(self):
         retirar=int(input("¿Cuánto desea retirar? : "))
