@@ -7,9 +7,9 @@ Created on Tue May  9 16:46:29 2023
 class Cajero:
     def __init__(self):
         self.continuar = True
-        self.monto = 5000
-        self.retiro_dia = 0
-        self.deposito_dia = 0
+        self.monto = 5000.00
+        self.retiro_dia = 0.00
+        self.deposito_dia = 0.00
         self.menu()
 
     def contraseña(self):
@@ -69,39 +69,39 @@ class Cajero:
         if self.deposito_dia >= 3000:
             print("Usted a alcanzado el límite de depósito diario.")
             return
-        deposito = int(input("Ingrese su monto a depositar: "))
+        deposito = float(input("Ingrese su monto a depositar: "))
         if deposito <= 0:
             print("No puede depositar 0 o un monto negativo.")
             return
         elif deposito > 3000:
-            print("No puede depositar más de 3000 en un solo depósito.")
+            print("No puede depositar más de s/3000 en un solo depósito.")
             return
-        print("Usted ha depositado", deposito)
+        print("Usted ha depositado s/", deposito)
         # modificar el monto y limite de deposito diario
         self.monto += deposito
         self.deposito_dia += deposito
-        print(f"Su nuevo saldo es {self.monto}")
+        print(f"Su nuevo saldo es s/{self.monto}")
 
     def retirar(self):
         if self.retiro_dia >= 3000:
             print("Ha alcanzado el límite de retiro diario.")
             return
-        retiro=int(input("¿Cuánto desea retirar? : "))
+        retiro=float(input("¿Cuánto desea retirar? : "))
         if retiro <= 0:
-            print("Debe retirar almenos 1")
+            print("Debe retirar almenos s/1.00")
             return
         elif retiro > 3000:
-            print("No puede retirar más de 3000 en un solo retiro.")
+            print("No puede retirar más de s/3000 en un solo retiro.")
             return
         elif self.monto < retiro:
             print("Imposible realizar el retiro, su monto es menor.")
             return
-        print("Su monto actual es", self.monto)
+        print("Su monto actual es s/", self.monto)
         self.monto-=retiro
         self.retiro_dia += retiro
-        print(f"Usted a retirado: {retiro}", f"su nuevo monto es {self.monto}")
+        print(f"Usted a retirado: s/{retiro}", f"su nuevo monto es {self.monto}")
 
     def ver(self):
-        print(f"Su saldo es: " , self.monto)
+        print(f"Su saldo es: s/" , self.monto)
 
 app = Cajero()
