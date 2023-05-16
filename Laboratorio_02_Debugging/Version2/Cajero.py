@@ -34,8 +34,7 @@ class Cajero:
             self.usuarios[key] = {
                 "contrasena": value,
                 "monto": monto
-            }
-            
+            }     
         
             
 

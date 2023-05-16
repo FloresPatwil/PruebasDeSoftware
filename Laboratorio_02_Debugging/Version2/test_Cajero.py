@@ -7,7 +7,7 @@ from Cajero import Cajero
 
 class TestCajero(unittest.TestCase):
     
-    """# test para verificar que el usuario exista
+    # test para verificar que el usuario exista
     def test_usuario(self):
         cajero = Cajero()
         cajero.usuarios = {"briyit": {"contrasena": 1234, "monto": 5000}}
@@ -48,7 +48,7 @@ class TestCajero(unittest.TestCase):
         cajero.usuarios = {"briyit": {"contrasena": 1234, "monto": 5000}}
         self.assert_(cajero.usuarios["briyit"]["monto"] == 5000)
     # test para ver que el deposito sea correcto
-    """
+    
     def test_depositar_exito(self):
         print("-----------------test_depositar_exito")
         cajero = Cajero()
