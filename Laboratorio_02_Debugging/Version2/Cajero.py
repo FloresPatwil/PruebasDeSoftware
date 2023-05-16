@@ -30,7 +30,7 @@ class Cajero:
                 continue
             key = row[0].lower() # nombre
             value = int(row[1]) # contrasena
-            monto = int(row[2])
+            monto = float(row[2])
             self.usuarios[key] = {
                 "contrasena": value,
                 "monto": monto
@@ -97,7 +97,7 @@ class Cajero:
                 if opcion == "1" :
                     self.depositar()
                 elif opcion == "2" :
-                    self.retiro()
+                    self.retirar()
                 elif opcion == "3":
                     self.ver()
                 elif opcion == "4":
@@ -131,7 +131,7 @@ class Cajero:
         self.deposito_dia += deposito
         print(f"Su nuevo saldo es {self.sesion['monto']}")
 
-    def retiro(self):
+    def retirar(self):
         if self.retiro_dia >= 3000:
             print("Ha alcanzado el límite de retiro diario.")
             return
@@ -167,4 +167,4 @@ class Cajero:
 
         
 
-app = Cajero()
+#app = Cajero()
